@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="horizontal" >
+
+	    <LinearLayout
+	      android:orientation="horizontal"
+	      android:layout_width="match_parent"
+	      android:layout_height="match_parent">
+	      
+	        <LinearLayout
+	        android:orientation="vertical"
+	        android:layout_width="match_parent"
+	      	android:layout_height="match_parent"
+	      	android:layout_weight="0.5"> 
+	      	
+	            <TextView
+	                android:layout_width="match_parent"
+	                android:layout_height="109dp"
+	                android:background="#000000" />
+      
+			    <com.google.android.maps.MapView
+			        android:id="@+id/mapView"
+			        android:layout_width="match_parent"
+			        android:layout_height="match_parent"
+			        android:layout_weight="1"
+			        android:apiKey="0sbvb8h9WVX3EjNchdMZCvW0SXcn5ztl99Aoq4Q"
+			        android:clickable="true"
+			        android:enabled="true" />
+			    
+			    <LinearLayout
+	    	    android:id="@+id/zoom"
+	    	    android:layout_width="wrap_content"
+	    	    android:layout_height="wrap_content"
+	    	    android:gravity="center_vertical|center_horizontal" android:layout_gravity="center_horizontal"/>
+			    
+			    <TextView
+	            android:layout_width="match_parent"
+	            android:layout_height="109dp"
+	            android:background="#000000" />
+			    
+		    </LinearLayout>
+		    
+	        <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_weight="1"
+	        android:orientation="vertical" >
+			    
+	            <LinearLayout
+	                android:layout_width="match_parent"
+	                android:layout_height="112dp" >
+	                
+	            </LinearLayout>
+	                
+		    
+		        <Button
+		        android:id="@+id/createTankButton"
+			    android:layout_height="wrap_content"
+			    android:layout_width="wrap_content"
+			    android:text="@string/CreateTank"
+			    android:layout_gravity="center_horizontal" 
+			    android:textSize="35dip"/>
+
+			
+			</LinearLayout>
+			
+
+      
+	  </LinearLayout>
+	  
+	  
+</LinearLayout>
