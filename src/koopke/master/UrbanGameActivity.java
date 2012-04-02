@@ -5,7 +5,6 @@ import java.util.List;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -27,6 +26,17 @@ public class UrbanGameActivity extends MapActivity {
 	int tankButtonFlag[]={0};
 	GeoPoint p=new GeoPoint(19240000,-99120000);
 	MapView mapView;
+	Drawable drawable;
+	ItemizedOverlay itemizedoverlayTank;
+	
+	
+	//---add tank as drawable---
+	//Drawable drawable = getResources().getDrawable(R.drawable.tankicon02);
+
+	//ItemizedOverlay itemizedoverlayTank = new ItemizedOverlay(tankDrawable, this,tankButtonFlag);
+	
+
+	
 	
 
 	
@@ -92,6 +102,8 @@ public class UrbanGameActivity extends MapActivity {
         zoomLayout.addView(zoomView, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));
         mapView.displayZoomControls(true);
         
+
+        
         //---Button Create Tank---
         Button createTankButton =(Button)findViewById(R.id.createTankButton);
         createTankButton.setOnClickListener(new View.OnClickListener(){
@@ -103,6 +115,13 @@ public class UrbanGameActivity extends MapActivity {
             System.out.println(mapView);
             p = mapView.getMapCenter();
             System.out.println("this is p:" +p);
+            
+            List<Overlay> mapOverlays = mapView.getOverlays();
+            OverlayItem overlayitem = new OverlayItem(p, "Hola, Mundo!", "I'm in Mexico City!");
+            itemizedoverlayTank.addOverlay(overlayitem);
+            mapOverlays.add(itemizedoverlayTank);
+            mapView.invalidate();
+            
 
             }});
 
@@ -110,8 +129,8 @@ public class UrbanGameActivity extends MapActivity {
 
         
         List<Overlay> mapOverlays = mapView.getOverlays();
-        Drawable drawable = this.getResources().getDrawable(R.drawable.tankicon02);
-        ItemizedOverlay itemizedoverlayTank = new ItemizedOverlay(drawable, this,tankButtonFlag);
+        drawable = this.getResources().getDrawable(R.drawable.tankicon02);
+        itemizedoverlayTank = new ItemizedOverlay(drawable, this,tankButtonFlag);
         OverlayItem overlayitem = new OverlayItem(p, "Hola, Mundo!", "I'm in Mexico City!");
         itemizedoverlayTank.addOverlay(overlayitem);
         mapOverlays.add(itemizedoverlayTank);
