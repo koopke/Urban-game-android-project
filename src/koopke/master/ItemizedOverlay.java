@@ -56,7 +56,9 @@ public class ItemizedOverlay extends com.google.android.maps.ItemizedOverlay {
 	@Override
 	public boolean onTouchEvent(MotionEvent event , MapView mapView){
 		if (tankflag[0]==1){
-			System.out.println("THNKS GOD!!!!");
+			System.out.println("Pressed after CreateTankButton");
+			tankflag[0]=0;
+			
 
 		}
 		
